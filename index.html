@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header>
+    <!-- nav-list -->
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-list__item">
+          <a href="#" class="nav-list__link">男款</a>
+        </li>
+        <li class="nav-list__item">
+          <a href="#" class="nav-list__link">女款</a>
+        </li>
+        <li class="nav-list__item">
+          <a href="#" class="nav-list__link">最新消息</a>
+        </li>
+        <li class="nav-list__item">
+          <a href="#" class="nav-list__link">聯絡我們</a>
+        </li>
+        <li class="nav-list__item">
+          <a href="#" class="nav-list__link">客製商品</a>
+        </li>
+        <li class="nav-list__item">
+          <div class="icon-wrapper">
+            <a href="#" class="icon">
+              <img src="/image/search-icon.png" alt="search">
+            </a>
+            <a href="#" class="icon">
+              <img src="/image/shopping-cart-icon.png" alt="shopping-cart">
+            </a>
+            <a href="#" class="icon">
+              <img src="/image/dark-mode-icon.png" alt="dark-mode">
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- hamburger -->
+    <input type="checkbox" class="navbar-toggle" id="navbar-toggle">
+    <label for="navbar-toggle" class="navbar-toggle-label">
+      <span class="hamburger"></span>
+    </label>
+    <!-- brand -->
+    <a href="#" class="navbar-brand">
+      <img src="/image/brand-logo.png" alt="logo" class="brand__logo">
+      <p class="brand__name">ALPHA Shop</p>
+    </a>
+  </header>
+
+  <main class="main-content">
+    <!-- stepper -->
+    <div class="stepper-panel">
+      <div class="container">
+        <h1>結帳</h1>
+        <div class="stepper-container">
+          <div class="step active">
+            <div class="circle-container"></div>
+          </div>
+          <div class="step">
+            <div class="circle-container"></div>
+            <div class="connect-line"></div>
+          </div>
+          <div class="step">
+            <div class="circle-container"></div>
+            <div class="connect-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- form -->
+    <div class="form-panel">
+      <div class="container">
+        <form>
+          <div class="form-content">
+            <!-- part one -->
+            <div class="part">
+              <h1>寄送地址</h1>
+              <!-- 稱謂 -->
+              <div class="form-row">
+                <label for="">稱謂</label>
+                <div class="select-wrapper">
+                  <select name="salutation" id="salutation">
+                    <option value="mr">先生</option>
+                    <option value="ms">小姐</option>
+                    <option value="all">不拘</option>
+                  </select>
+                </div>
+              </div>
+              <!-- 姓名 -->
+              <div class="form-row">
+                <label for="">姓名</label>
+                <input type="text" placeholder="請輸入姓名">
+              </div>
+              <!-- 電話 -->
+              <div class="form-row">
+                <label for="">電話</label>
+                <input type="text" placeholder="請輸入行動電話">
+              </div>
+              <!-- Email -->
+              <div class="form-row">
+                <label for="">Email</label>
+                <input type="text" placeholder="請輸入電子郵件">
+              </div>
+              <!-- 縣市 -->
+              <div class="form-row">
+                <label for="">縣市</label>
+                <div class="select-wrapper">
+                  <select name="county" id="county">
+                    <option value="" disabled selected>請選擇縣市</option>
+                    <option value="taipei-city">臺北市</option>
+                    <option value="new-taipei-city">新北市</option>
+                    <option value="taoyuan-city">桃園市</option>
+                    <option value="taichung-city">臺中市</option>
+                    <option value="tainan-city">臺南市</option>
+                    <option value="kaohsiung-city">高雄市</option>
+                    <option value="hsinchu-county">新竹縣</option>
+                    <option value="miaoli-county">苗栗縣</option>
+                    <option value="changhua-county">彰化縣</option>
+                    <option value="nantou-county">南投縣</option>
+                    <option value="yunlin-county">雲林縣</option>
+                    <option value="chiayi-county">嘉義縣</option>
+                    <option value="pingtung-county">屏東縣</option>
+                    <option value="yilan-county">宜蘭縣</option>
+                    <option value="hualien-county">花蓮縣</option>
+                    <option value="taitung-county">臺東縣</option>
+                    <option value="penghu-county">澎湖縣</option>
+                    <option value="kinmen-county">金門縣</option>
+                    <option value="lienchiang-county">連江縣</option>
+                    <option value="keelung-city">基隆市</option>
+                    <option value="hsinchu-city">新竹市</option>
+                    <option value="chiayi-city">嘉義市</option>
+                  </select>
+                </div>
+              </div>
+              <!-- 地址 -->
+              <div class="form-row">
+                <label for="">地址</label>
+                <input type="text" placeholder="請輸入地址">
+              </div>
+            </div>
+            <!-- part two -->
+            <div class="part">
+              <h1>運送方式</h1>
+              <!-- 標準運送 -->
+              <div class="form-row">
+                <div>
+                  <input type="radio">
+                  <label for="">
+                    <span class="shipping-method">標準運送</span>
+                    <span class="shipping-time">約3~7個工作天</span>
+                  </label>
+                  <span class="shipping-fee">免費</span>
+                </div>
+              </div>
+              <!-- DHL貨運 -->
+              <div class="form-row">
+                <div>
+                  <input type="radio">
+                  <label for="">
+                    <span class="shipping-method">DHL貨運</span>
+                    <span class="shipping-time">48小時內送達</span>
+                  </label>
+                  <span class="shipping-fee">$500</span>
+                </div>
+              </div>
+            </div>
+            <!-- part three -->
+            <div class="part">
+              <h1>付款資訊</h1>
+              <!-- 持卡人姓名 -->
+              <div class="form-row">
+                <label for="">持卡人姓名</label>
+                <input type="text" placeholder="John Doe">
+              </div>
+              <!-- 卡號 -->
+              <div class="form-row">
+                <label for="">卡號</label>
+                <input type="text" placeholder="1111 2222 3333 4444">
+              </div>
+              <!-- 有效期限 -->
+              <div class="form-row">
+                <label for="">有效期限</label>
+                <input type="text" placeholder="MM/YY">
+              </div>
+              <!-- CVC/CCV -->
+              <div class="form-row">
+                <label for="">CVC/CCV</label>
+                <input type="text" placeholder="123">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- cart -->
+    <div class="cart-panel">
+
+    </div>
+    <!-- button -->
+    <div class="button-panel">
+
+    </div>
+  </main>
+</body>
+</html>
