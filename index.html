@@ -5,11 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shopping Cart</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+TC&family=Nunito+Sans&family=Secular+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./scss/style.css" />
 </head>
 <body>
   <header>
-    <!-- nav-list -->
+    <input type="checkbox" class="navbar-toggle" id="navbar-toggle">
+    <!-- nav-list -->    
     <nav class="nav">
       <ul class="nav-list">
         <li class="nav-list__item">
@@ -28,7 +32,7 @@
           <a href="#" class="nav-list__link">客製商品</a>
         </li>
         <li class="nav-list__item">
-          <div class="icon-wrapper">
+          <div class="icon-wrapper d-flex justify-content-center">
             <a href="#" class="icon">
               <img src="/image/search-icon.png" alt="search">
             </a>
@@ -42,13 +46,12 @@
         </li>
       </ul>
     </nav>
-    <!-- hamburger -->
-    <input type="checkbox" class="navbar-toggle" id="navbar-toggle">
+    <!-- hamburger -->    
     <label for="navbar-toggle" class="navbar-toggle-label">
       <span class="hamburger"></span>
     </label>
     <!-- brand -->
-    <a href="#" class="navbar-brand">
+    <a href="#" class="navbar-brand d-flex justify-content-center">
       <img src="/image/brand-logo.png" alt="logo" class="brand__logo">
       <p class="brand__name">ALPHA Shop</p>
     </a>
@@ -243,8 +246,8 @@
     <!-- button -->
     <div class="button-panel">
       <div class="container">
-        <button class="btn-previous"><img src="image/arrow-previous.png" alt="previous">上一步</button>
-        <button class="btn-next">下一步<img src="image/arrow-next.png" alt="next"></button>
+        <button class="btn-previous"><img src="/image/arrow-previous.png" alt="previous">上一步</button>
+        <button class="btn-next">下一步<img src="/image/arrow-next.png" alt="next"></button>
       </div>
     </div>
   </main>
