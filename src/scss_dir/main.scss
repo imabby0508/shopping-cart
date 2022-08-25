@@ -1,0 +1,366 @@
+// reset css
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+img {
+  // width: 100%;
+  // height: 100%;
+  display: block;
+}
+
+// basic setting
+$body-bg: #ffffff;
+$body-color: #2a2a2a;
+$border-color: rgba(42, 42, 42, 0.1);
+$dark-gray: #333333;
+$black: #000000;
+$step-line-color:#F0F0F5;
+$light-gray:#AFB1BD;
+
+// basic setting : size
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+);
+
+// 使用 @each 產出 css size 設定
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $num, $val in $sizes {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $val;
+    }
+  }
+}
+
+// basic setting : spacer
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25,
+  ),
+  2: (
+    $spacer * 0.5,
+  ),
+  3: (
+    $spacer * 0.75,
+  ),
+  4: $spacer,
+  5: (
+    $spacer * 1.25,
+  ),
+  6: (
+    $spacer * 1.5,
+  ),
+  7: (
+    $spacer * 1.75,
+  ),
+  8: (
+    $spacer * 2,
+  ),
+);
+
+// 使用 @each 產出 css spacer 設定
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $num, $val in $spacers {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $val;
+    }
+    .#{$abbrev}t-#{$num} {
+      #{$prop}-top: $val;
+    }
+    .#{$abbrev}r-#{$num} {
+      #{$prop}-right: $val;
+    }
+    .#{$abbrev}b-#{$num} {
+      #{$prop}-bottom: $val;
+    }
+    .#{$abbrev}l-#{$num} {
+      #{$prop}-left: $val;
+    }
+    .#{$abbrev}x-#{$num} {
+      #{$prop}-right: $val;
+      #{$prop}-left: $val;
+    }
+    .#{$abbrev}y-#{$num} {
+      #{$prop}-top: $val;
+      #{$prop}-bottom: $val;
+    }
+  }
+}
+
+// basic setting : display
+.d-none {
+  display: none;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-blockt;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+// basic setting : flex-direction
+.flex-column {
+  flex-direction: column;
+}
+
+// basic setting : text
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+// basic setting : cursor
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .circle-container::after {
+      content: "#{$i}";
+    }
+  }
+}
+
+// style start
+body {
+  height: 100%;
+  background: $body-bg;
+  color: $body-color;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+// header and nav
+header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 56px;
+  background: $body-bg;
+  text-align: center;
+}
+
+.nav {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background: $body-bg;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.2s ease-out;
+  .nav-list__item {
+    border-bottom: 2px solid $border-color;
+    height: 72px;
+    line-height: 72px;
+    margin: 0 14.5px;
+    &:last-child {
+      border-bottom: none;
+    }
+    .nav-list__link {
+      color: $body-color;
+    }
+    .icon-wrapper {
+      justify-content: center;
+    }
+    .icon {
+      img {
+        height: 24px;
+        width: 24px;
+        margin: 24px;
+      }
+    }
+  }
+}
+
+.navbar-toggle {
+  visibility: hidden;
+  position: absolute;
+  &:checked ~ .nav {
+    transform: scale(1, 1);
+    &.nav-list__item {
+      transition: opacity 0.2s ease-out 0.15s;
+      opacity: 1;
+    }
+  }
+}
+
+.navbar-toggle-label {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 17px;
+  display: flex;
+  align-items: center;
+  .hamburger {
+    position: relative;
+    width: 15px;
+    height: 3px;
+    background: $body-color;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background: $body-color;
+    }
+    &::after {
+      width: 10px;
+      height: 3px;
+      top: 6px;
+    }
+    &::before {
+      width: 20px;
+      height: 3px;
+      bottom: 6px;
+    }
+  }
+}
+
+.navbar-brand {
+  line-height: 56px;
+  margin: 16px auto;
+  justify-content: center;
+  .brand__name {
+    color: $body-color;
+    font-family: "Secular One";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 24px;
+    margin-left: 7.87px;
+  }
+  .brand__logo {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// stepper
+.stepper-panel {
+  padding-top: 56px;
+  height: 180px;
+  h1 {
+    line-height: 38px;
+  }
+  .stepper-container {
+    display: flex;
+    padding-top: 24px;
+    justify-content: space-between;
+  }
+  .step {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    font-family: "Nunito Sans";
+    font-weight: 700;
+    @include getStepNums(3);
+    .circle-container {
+      height: 32px;
+      width: 32px;
+      background: $body-bg;
+      border: 1px solid $light-gray;
+      border-radius: 50%;
+      color: $light-gray;
+      margin: 0 auto;
+      &::after {
+        line-height: 32px;
+      }
+      &.left-circle {
+        margin-left: 0;
+      }
+      &.right-circle {
+        margin-right: 0;
+      }
+    }
+    &.checked, &.active {
+      .circle-container {
+        background: $body-color;
+        color: $body-bg;
+      }
+    }
+    &.checked {
+      .circle-container::after {
+        content: "\2714";
+      }
+    }
+    .connect-line {
+      position: absolute;
+      top: 16px;
+      display: block;
+      background: $step-line-color;
+      height: 1px;
+      width: calc(50vw - 6em);
+      &.first-line {
+        right: calc(50% + 2em);
+      }
+      &.second-line {
+        left: calc(-50% + 2em);
+      }
+    }
+  }
+}

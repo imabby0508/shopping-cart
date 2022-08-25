@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+TC&family=Nunito+Sans&family=Secular+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./scss/style.css" />
+  <link rel="stylesheet" href="dist/main.css" />
 </head>
 <body>
   <header>
@@ -32,15 +32,15 @@
           <a href="#" class="nav-list__link">客製商品</a>
         </li>
         <li class="nav-list__item">
-          <div class="icon-wrapper d-flex justify-content-center">
+          <div class="icon-wrapper d-flex ">
             <a href="#" class="icon">
-              <img src="/image/search-icon.png" alt="search">
+              <img src="/src/image/search-icon.png" alt="search">
             </a>
             <a href="#" class="icon">
-              <img src="/image/shopping-cart-icon.png" alt="shopping-cart">
+              <img src="/src/image/shopping-cart-icon.png" alt="shopping-cart">
             </a>
             <a href="#" class="icon">
-              <img src="/image/dark-mode-icon.png" alt="dark-mode">
+              <img src="/src/image/dark-mode-icon.png" alt="dark-mode">
             </a>
           </div>
         </li>
@@ -51,8 +51,8 @@
       <span class="hamburger"></span>
     </label>
     <!-- brand -->
-    <a href="#" class="navbar-brand d-flex justify-content-center">
-      <img src="/image/brand-logo.png" alt="logo" class="brand__logo">
+    <a href="#" class="navbar-brand d-flex ">
+      <img src="/src/image/brand-logo.png" alt="logo" class="brand__logo">
       <p class="brand__name">ALPHA Shop</p>
     </a>
   </header>
@@ -64,15 +64,15 @@
         <h1>結帳</h1>
         <div class="stepper-container">
           <div class="step active">
-            <div class="circle-container"></div>
+            <div class="circle-container left-circle"></div>
           </div>
           <div class="step">
             <div class="circle-container"></div>
-            <div class="connect-line"></div>
+            <div class="connect-line first-line"></div>
           </div>
           <div class="step">
-            <div class="circle-container"></div>
-            <div class="connect-line"></div>
+            <div class="circle-container right-circle"></div>
+            <div class="connect-line second-line"></div>
           </div>
         </div>
       </div>
@@ -207,7 +207,7 @@
       <div class="container">
         <div class="cart-content">
           <div class="cart-item-wrapper">
-            <img src="/image/cart-item-1.png" alt="cart-item-1" class="cart-item__image">
+            <img src="/src/image/cart-item-1.png" alt="cart-item-1" class="cart-item__image">
             <div class="cart-item-details">
               <p class="cart-item__name">破壞補丁修身牛仔褲</p>
               <div class="cart-item-quantity-wrapper">
@@ -219,7 +219,7 @@
             </div>
           </div>
           <div class="cart-item-wrapper">
-            <img src="/image/cart-item-2.png" alt="cart-item-2" class="cart-item__image">
+            <img src="/src/image/cart-item-2.png" alt="cart-item-2" class="cart-item__image">
             <div class="cart-item-details">
               <p class="cart-item__name">刷色直筒牛仔褲</p>
               <div class="cart-item-quantity-wrapper">
@@ -246,10 +246,11 @@
     <!-- button -->
     <div class="button-panel">
       <div class="container">
-        <button class="btn-previous"><img src="/image/arrow-previous.png" alt="previous">上一步</button>
-        <button class="btn-next">下一步<img src="/image/arrow-next.png" alt="next"></button>
+        <button class="btn-previous"><img src="/src/image/arrow-previous.png" alt="previous">上一步</button>
+        <button class="btn-next">下一步<img src="/src/image/arrow-next.png" alt="next"></button>
       </div>
     </div>
   </main>
+  <script src="dist/bundle.js"></script>
 </body>
 </html>
