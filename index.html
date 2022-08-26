@@ -85,21 +85,23 @@
             <!-- part one -->
             <div class="part">
               <h1>寄送地址</h1>
-              <!-- 稱謂 -->
-              <div class="form-row">
-                <label for="">稱謂</label>
-                <div class="select-wrapper">
-                  <select name="salutation" id="salutation">
-                    <option value="mr">先生</option>
-                    <option value="ms">小姐</option>
-                    <option value="all">不拘</option>
-                  </select>
+              <div class="form-content-name">
+                <!-- 稱謂 -->
+                <div class="form-row form-row-salutation">
+                  <label for="">稱謂</label>
+                  <div class="select-wrapper">
+                    <select name="salutation" id="salutation">
+                      <option value="mr">先生</option>
+                      <option value="ms">小姐</option>
+                      <option value="all">不拘</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <!-- 姓名 -->
-              <div class="form-row">
-                <label for="">姓名</label>
-                <input type="text" placeholder="請輸入姓名">
+                <!-- 姓名 -->
+                <div class="form-row form-row-name">
+                  <label for="">姓名</label>
+                  <input type="text" placeholder="請輸入姓名" size="10" >
+                </div>
               </div>
               <!-- 電話 -->
               <div class="form-row">
@@ -154,18 +156,18 @@
               <!-- 標準運送 -->
               <div class="form-row">
                 <div class="shipping-wrapper d-flex">
-                  <input type="radio">
+                  <input type="radio" class="shipping-radio">
                   <label for="" class="d-flex flex-column">
                     <span class="shipping-method">標準運送</span>
                     <span class="shipping-time">約3~7個工作天</span>
                   </label>
                   <span class="shipping-fee">免費</span>
                 </div>
-              </div>
+              <!-- </div> -->
               <!-- DHL貨運 -->
-              <div class="form-row">
+              <!-- <div class="form-row"> -->
                 <div class="shipping-wrapper d-flex">
-                  <input type="radio">
+                  <input type="radio" class="shipping-radio">
                   <label for="" class="d-flex flex-column">
                     <span class="shipping-method">DHL貨運</span>
                     <span class="shipping-time">48小時內送達</span>
@@ -187,15 +189,17 @@
                 <label for="">卡號</label>
                 <input type="text" placeholder="1111 2222 3333 4444">
               </div>
-              <!-- 有效期限 -->
-              <div class="form-row">
-                <label for="">有效期限</label>
-                <input type="text" placeholder="MM/YY">
-              </div>
-              <!-- CVC/CCV -->
-              <div class="form-row">
-                <label for="">CVC/CCV</label>
-                <input type="text" placeholder="123">
+              <div class="form-content-card">
+                <!-- 有效期限 -->
+                <div class="form-row form-row-expiration">
+                  <label for="">有效期限</label>
+                  <input type="text" placeholder="MM/YY" size="5">
+                </div>
+                <!-- CVC/CCV -->
+                <div class="form-row form-row-cvc">
+                  <label for="">CVC/CCV</label>
+                  <input type="text" placeholder="123" size="5">
+                </div>
               </div>
             </div>
           </div>
