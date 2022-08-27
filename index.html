@@ -71,14 +71,17 @@
           <div class="stepper-container">
             <div class="step active">
               <div class="circle-container left-circle"></div>
+              <div class="label-container d-none">寄送地址</div>
               <div class="connect-line first-line"></div>
             </div>
             <div class="step">
               <div class="circle-container"></div>
+              <div class="label-container d-none">運送方式</div>
               <div class="connect-line second-line"></div>
             </div>
             <div class="step">
               <div class="circle-container right-circle"></div>
+              <div class="label-container d-none">付款資訊</div>
             </div>
           </div>
         </div>
@@ -109,51 +112,55 @@
                     <input type="text" placeholder="請輸入姓名" size="10" />
                   </div>
                 </div>
-                <!-- 電話 -->
-                <div class="form-row">
-                  <label for="">電話</label>
-                  <input type="text" placeholder="請輸入行動電話" />
-                </div>
-                <!-- Email -->
-                <div class="form-row">
-                  <label for="">Email</label>
-                  <input type="text" placeholder="請輸入電子郵件" />
-                </div>
-                <!-- 縣市 -->
-                <div class="form-row">
-                  <label for="">縣市</label>
-                  <div class="select-wrapper">
-                    <select name="county" id="county">
-                      <option value="" disabled selected>請選擇縣市</option>
-                      <option value="taipei-city">臺北市</option>
-                      <option value="new-taipei-city">新北市</option>
-                      <option value="taoyuan-city">桃園市</option>
-                      <option value="taichung-city">臺中市</option>
-                      <option value="tainan-city">臺南市</option>
-                      <option value="kaohsiung-city">高雄市</option>
-                      <option value="hsinchu-county">新竹縣</option>
-                      <option value="miaoli-county">苗栗縣</option>
-                      <option value="changhua-county">彰化縣</option>
-                      <option value="nantou-county">南投縣</option>
-                      <option value="yunlin-county">雲林縣</option>
-                      <option value="chiayi-county">嘉義縣</option>
-                      <option value="pingtung-county">屏東縣</option>
-                      <option value="yilan-county">宜蘭縣</option>
-                      <option value="hualien-county">花蓮縣</option>
-                      <option value="taitung-county">臺東縣</option>
-                      <option value="penghu-county">澎湖縣</option>
-                      <option value="kinmen-county">金門縣</option>
-                      <option value="lienchiang-county">連江縣</option>
-                      <option value="keelung-city">基隆市</option>
-                      <option value="hsinchu-city">新竹市</option>
-                      <option value="chiayi-city">嘉義市</option>
-                    </select>
+                <div class="form-content-contact">
+                  <!-- 電話 -->
+                  <div class="form-row form-row-phone">
+                    <label for="">電話</label>
+                    <input type="text" placeholder="請輸入行動電話" size="10"/>
+                  </div>
+                  <!-- Email -->
+                  <div class="form-row form-row-email">
+                    <label for="">Email</label>
+                    <input type="text" placeholder="請輸入電子郵件" size="10" />
                   </div>
                 </div>
-                <!-- 地址 -->
-                <div class="form-row">
-                  <label for="">地址</label>
-                  <input type="text" placeholder="請輸入地址" />
+                <div class="form-content-residence">
+                  <!-- 縣市 -->
+                  <div class="form-row form-row-county">
+                    <label for="">縣市</label>
+                    <div class="select-wrapper">
+                      <select name="county" id="county">
+                        <option value="" disabled selected>請選擇縣市</option>
+                        <option value="taipei-city">臺北市</option>
+                        <option value="new-taipei-city">新北市</option>
+                        <option value="taoyuan-city">桃園市</option>
+                        <option value="taichung-city">臺中市</option>
+                        <option value="tainan-city">臺南市</option>
+                        <option value="kaohsiung-city">高雄市</option>
+                        <option value="hsinchu-county">新竹縣</option>
+                        <option value="miaoli-county">苗栗縣</option>
+                        <option value="changhua-county">彰化縣</option>
+                        <option value="nantou-county">南投縣</option>
+                        <option value="yunlin-county">雲林縣</option>
+                        <option value="chiayi-county">嘉義縣</option>
+                        <option value="pingtung-county">屏東縣</option>
+                        <option value="yilan-county">宜蘭縣</option>
+                        <option value="hualien-county">花蓮縣</option>
+                        <option value="taitung-county">臺東縣</option>
+                        <option value="penghu-county">澎湖縣</option>
+                        <option value="kinmen-county">金門縣</option>
+                        <option value="lienchiang-county">連江縣</option>
+                        <option value="keelung-city">基隆市</option>
+                        <option value="hsinchu-city">新竹市</option>
+                        <option value="chiayi-city">嘉義市</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- 地址 -->
+                  <div class="form-row form-row-address">
+                    <label for="">地址</label>
+                    <input type="text" placeholder="請輸入地址" />
+                  </div>
                 </div>
               </div>
               <!-- part two -->
@@ -223,6 +230,7 @@
       <div class="cart-panel">
         <div class="container">
           <div class="cart-content">
+            <div class="cart-title d-none">購物籃</div>
             <div class="cart-items-wrapper">
               <!-- <div class="cart-item-wrapper d-flex">
                 <img

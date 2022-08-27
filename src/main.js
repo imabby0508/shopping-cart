@@ -81,18 +81,18 @@ function cartItemsClicked(e) {
   checkoutTotalAmount();
 }
 
-function shippingChosen(e) {  
+function shippingChosen(e) {
   for (const shippingRadioBtn of shippingRadioBtns) {
-    shippingRadioBtn.addEventListener("change", changeShippingFee)
+    shippingRadioBtn.addEventListener("change", changeShippingFee);
   }
-}     
+}
 
 function changeShippingFee(e) {
   if (this.checked && this.value > 0) {
     totalShippingFee.innerHTML = `$${this.value}`;
   } else {
     totalShippingFee.innerHTML = "免費";
-  }  
+  }
   shippingFee = Number(this.value);
   checkoutTotalAmount();
 }
