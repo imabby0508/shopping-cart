@@ -45,9 +45,19 @@
                   alt="shopping-cart"
                 />
               </a>
-              <a href="#" class="icon">
-                <img src="/src/image/dark-mode-icon.png" alt="dark-mode" />
-              </a>
+              <!-- <a href="#" class="icon dark-mode-toggle">
+                <img src="/src/image/dark-mode-icon.png" alt="dark-mode"/>
+              </a> -->
+              <div class="mode-toggle">
+                <label for="dark-mode-toggle" class="dark-mode-label">
+                  <img src="/src/image/dark-mode-icon.png" alt="dark-mode"/>
+                </label>
+                <input
+                  type="checkbox"
+                  class="dark-mode-input"
+                  id="dark-mode-toggle"
+                />
+              </div>
             </div>
           </li>
         </ul>
@@ -116,7 +126,7 @@
                   <!-- 電話 -->
                   <div class="form-row form-row-phone">
                     <label for="">電話</label>
-                    <input type="text" placeholder="請輸入行動電話" size="10"/>
+                    <input type="text" placeholder="請輸入行動電話" size="10" />
                   </div>
                   <!-- Email -->
                   <div class="form-row form-row-email">
@@ -169,12 +179,7 @@
                 <div class="form-row">
                   <!-- 標準運送 -->
                   <div class="shipping-wrapper d-flex">
-                    <input
-                      name="shipping"
-                      type="radio"
-                      value="0"
-                      checked
-                    />
+                    <input name="shipping" type="radio" value="0" checked />
                     <label for="" class="d-flex flex-column">
                       <span class="shipping-method standard">標準運送</span>
                       <span class="shipping-time">約3~7個工作天</span>
@@ -183,11 +188,7 @@
                   </div>
                   <!-- DHL貨運 -->
                   <div class="shipping-wrapper d-flex">
-                    <input
-                      name="shipping"
-                      type="radio"
-                      value="500"
-                    />
+                    <input name="shipping" type="radio" value="500" />
                     <label for="" class="d-flex flex-column">
                       <span class="shipping-method">DHL貨運</span>
                       <span class="shipping-time">48小時內送達</span>
@@ -305,7 +306,7 @@
 
     <footer class="footer d-none">
       <div class="footer-brand d-flex">
-        <img src="/src/image/brand-logo.png" alt="logo" class="brand__logo">
+        <img src="/src/image/brand-logo.png" alt="logo" class="brand__logo" />
         <p class="brand__name">ALPHA Shop</p>
       </div>
       <div class="footer-content footer-content-service">
@@ -332,7 +333,7 @@
         <p class="footer__item">+886 02123-45678</p>
         <div class="footer-icon-wrapper d-flex">
           <a href="#" class="footer-icon">
-            <img src="/src/image/fb-icon.png" alt="fb" class="img-fb"/>
+            <img src="/src/image/fb-icon.png" alt="fb" class="img-fb" />
           </a>
           <a href="#" class="footer-icon">
             <img src="/src/image/ig-icon.png" alt="ig" />
@@ -340,7 +341,7 @@
           <a href="#" class="footer-icon">
             <img src="/src/image/whatsapp-icon.png" alt="whatsapp" />
           </a>
-        </div>      
+        </div>
       </div>
     </footer>
     <script src="dist/bundle.js"></script>

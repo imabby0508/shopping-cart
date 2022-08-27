@@ -12,6 +12,8 @@ const btnPanel = document.querySelector(".button-panel");
 const nextBtn = btnPanel.querySelector(".btn-next");
 const prevBtn = btnPanel.querySelector(".btn-previous");
 const finishBtn = btnPanel.querySelector(".btn-finish");
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const darkModeLabel = document.querySelector(".dark-mode-label");
 
 let step = 0;
 let shippingFee = 0;
@@ -145,9 +147,21 @@ function setBtnDisabled() {
   }
 }
 
+function darkModeToggleHandler(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+    darkModeLabel.innerHTML = `
+      <img src="/src/image/light-mode-icon.png" alt="light-mode"/>`;     
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+    darkModeLabel.innerHTML = `<img src="/src/image/dark-mode-icon.png" alt="dark-mode" />`;
+  }
+}
+
 renderCartItems();
 checkoutTotalAmount();
 
 cartItemsWrapper.addEventListener("click", cartItemsClicked);
 form.addEventListener("click", shippingChosen);
 btnPanel.addEventListener("click", btnPanelClicked);
+darkModeToggle.addEventListener("change", darkModeToggleHandler);

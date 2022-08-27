@@ -43,18 +43,43 @@ img {
 }
 
 // basic setting
-$body-bg: #ffffff;
-$body-color: #2a2a2a;
-$border-color: rgba(42, 42, 42, 0.1);
-$dark-gray: #333333;
-$black: #000000;
-$line-color: #f0f0f5;
-$circle-color: #afb1bd;
-$font-color: #808080;
-$form-border-color: #4a4a4a;
-$light-gray: #999999;
-$pink: #f67599;
-$footer-bg: #e5e5e5;
+:root {
+  --body-bg: #ffffff;
+  --body-color: #2a2a2a;
+  --border-color: rgba(42, 42, 42, 0.1);
+  --btn-font-color: #000000;
+  --line-color: #f0f0f5;
+  --circle-color: #afb1bd;
+  --font-color: #808080;
+  --form-border-color: #4a4a4a;
+  --pink: #f67599;
+  --footer-bg: #e5e5e5;
+  --input-background-color: transparent;
+  --input-placeholder-color: #999999;
+  --input-font-color: #999999;
+  --option-color: #ffffff;
+  --img-color: brightness(100%);
+  --circle-container-font-color: #000000;
+}
+
+[data-theme="dark"] {
+  --body-bg: #121212;
+  --body-color: #ffffff;
+  --border-color: rgba(42, 42, 42, 0.1);
+  --btn-font-color: #ffffff;
+  --line-color: #ffffff;
+  --circle-color: #ffffff;
+  --font-color: rgba(255, 255, 255, 0.4);
+  --form-border-color: #5e5e5e;
+  --pink: #f67599;
+  --footer-bg: #333333;
+  --input-background-color: transparent;
+  --input-placeholder-color: rgba(255, 255, 255, 0.4);
+  --input-font-color: rgba(255, 255, 255, 0.4);
+  --option-color: #121212;
+  --img-color: invert(100%);
+  --circle-container-font-color: #808080;
+}
 
 // basic setting : size
 $sizes: (
@@ -183,17 +208,20 @@ $spacers: (
 }
 
 %input-style {
-  border: 1px solid $form-border-color;
+  border: 1px solid var(--form-border-color);
   border-radius: 4px;
   font-size: 0.75rem;
   padding: 0.75rem 1rem;
+  background-color: var(--input-background-color);
+  color: var(--input-font-color);
+  -webkit-text-fill-color: var(--input-placeholder-color);
 }
 
 // style start
 body {
   height: 100%;
-  background: $body-bg;
-  color: $body-color;
+  background: var(--body-bg);
+  color: var(--body-color);
   font-family: "Noto Sans TC", sans-serif;
   font-size: 16px;
 }
@@ -214,7 +242,7 @@ header {
   z-index: 999;
   width: 100%;
   height: 56px;
-  background: $body-bg;
+  background: var(--body-bg);
   text-align: center;
 }
 
@@ -222,12 +250,12 @@ header {
   position: absolute;
   top: 100%;
   width: 100%;
-  background: $body-bg;
+  background: var(--body-bg);
   transform: scale(1, 0);
   transform-origin: top;
   transition: transform 0.2s ease-out;
   .nav-list__item {
-    border-bottom: 2px solid $border-color;
+    border-bottom: 2px solid var(--border-color);
     height: 4.5rem;
     line-height: 4.5rem;
     margin: 0 14.5px;
@@ -235,16 +263,18 @@ header {
       border-bottom: none;
     }
     .nav-list__link {
-      color: $body-color;
+      color: var(--body-color);
     }
     .icon-wrapper {
       justify-content: center;
-    }
-    .icon {
       img {
         height: 1.5rem;
         width: 1.5rem;
         margin: 1.5rem;
+        cursor: pointer;      
+      }
+      .dark-mode-input {
+        display: none;
       }
     }
   }
@@ -274,13 +304,13 @@ header {
     position: relative;
     width: 15px;
     height: 3px;
-    background: $body-color;
+    background: var(--body-color);
     &::before,
     &::after {
       content: "";
       position: absolute;
       left: 0;
-      background: $body-color;
+      background: var(--body-color);
     }
     &::after {
       width: 10px;
@@ -300,7 +330,7 @@ header {
   margin: 1rem auto;
   justify-content: center;
   .brand__name {
-    color: $body-color;
+    color: var(--body-color);
     font-family: "Secular One";
     font-size: 1.1rem;
     font-weight: 600;
@@ -335,10 +365,10 @@ header {
     .circle-container {
       height: 2rem;
       width: 2rem;
-      background: $body-bg;
-      border: 1px solid $circle-color;
+      background: var(--body-bg);
+      border: 1px solid var(--circle-color);
       border-radius: 50%;
-      color: $circle-color;
+      color: var(--circle-color);
       margin: 0 auto;
       &::after {
         line-height: 2rem;
@@ -354,7 +384,7 @@ header {
       position: absolute;
       top: 1rem;
       display: block;
-      background: $line-color;
+      background: var(--line-color);
       height: 1px;
       width: calc(50vw - 6em);
       min-width: 40px;
@@ -368,11 +398,11 @@ header {
     &.checked,
     &.active {
       .circle-container {
-        background: $body-color;
-        color: $body-bg;
+        background: var(--body-color);
+        color: var(--body-bg);
       }
       .connect-line {
-        background: $body-color;
+        background: var(--body-color);
       }
     }
     &.checked {
@@ -406,7 +436,7 @@ form {
       margin-bottom: 0.5rem;
       font-size: 0.75rem;
       font-weight: 700;
-      color: $font-color;
+      color: var(--font-color);
       line-height: 1rem;
     }
     input {
@@ -418,7 +448,7 @@ form {
         padding: 0.5rem;
         margin: 1.25rem;
         &:checked {
-          box-shadow: inset 0 0 0 5px $body-color;
+          box-shadow: inset 0 0 0 5px var(--body-color);
           &::after {
             content: "";
             position: absolute;
@@ -427,7 +457,7 @@ form {
             width: 100%;
             height: 100%;
             border-radius: 4px;
-            border: 1px solid $body-color;
+            border: 1px solid var(--body-color);
           }
         }
       }
@@ -441,12 +471,15 @@ form {
         cursor: pointer;
         width: 100%;
         background-color: transparent;
+        >option {
+          background-color: var(--option-color);
+        }
       }
       &::after {
         content: "";
         border-style: solid;
         border-width: 6px 5px 0 5px;
-        border-color: $body-color transparent transparent transparent;
+        border-color: var(--body-color) transparent transparent transparent;
         position: absolute;
         top: 50%;
         right: 8px;
@@ -457,7 +490,7 @@ form {
     .shipping-wrapper {
       position: relative;
       justify-content: space-between;
-      border: 1px solid $line-color;
+      border: 1px solid var(--line-color);
       border-radius: 4px;
       height: 60px;
       margin-bottom: 1rem;
@@ -504,45 +537,49 @@ form {
 
 // cart panel
 .cart-panel {
-  border: 1px solid $line-color;
+  border: 1px solid var(--line-color);
   border-radius: 8px;
   margin: 16px 10px;
   padding: 0.5rem 0.25rem 0.25rem 0.25rem;
-  .cart-item-wrapper {
-    justify-content: space-between;
-    img {
-      width: 100px;
-      height: 100px;
-      border-radius: 4px;
-      margin: 0.5rem 0;
-    }
-    .cart-item-details {
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: space-evenly;
-      .cart-item__name {
-        text-align: right;
+  .cart-items-wrapper {
+    margin-top: 1rem;    
+    .cart-item-wrapper {
+      justify-content: space-between;    
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+        margin: 0.5rem 0;
       }
-      .minus-container,
-      .plus-container {
-        height: 26px;
-        width: 26px;
-        background: $line-color;
-        border-radius: 50%;
-        text-align: center;
-        font-weight: 700;
-        &:hover {
-          cursor: pointer;
+      .cart-item-details {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        .cart-item__name {
+          text-align: right;
         }
-      }
-      .cart-item__quantity {
-        font-weight: 500;
-        margin: 0 1.5rem;
-      }
-      .cart-item__price {
-        font-size: 14px;
-        font-weight: 700;
-        font-family: "Nunito Sans";
+        .minus-container,
+        .plus-container {
+          height: 26px;
+          width: 26px;
+          background: var(--line-color);
+          border-radius: 50%;
+          text-align: center;
+          font-weight: 700;
+          color: var(--circle-container-font-color);
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .cart-item__quantity {
+          font-weight: 500;
+          margin: 0 1.5rem;
+        }
+        .cart-item__price {
+          font-size: 14px;
+          font-weight: 700;
+          font-family: "Nunito Sans";
+        }
       }
     }
   }
@@ -550,7 +587,7 @@ form {
     height: 50px;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid $line-color;
+    border-top: 1px solid var(--line-color);
     font-size: 14px;
     .checkout__amount {
       font-weight: 700;
@@ -562,7 +599,7 @@ form {
 .line {
   width: 95%;
   height: 1px;
-  background: $line-color;
+  background: var(--line-color);
   margin: 2rem auto;
 }
 
@@ -581,11 +618,12 @@ form {
     justify-content: center;
     line-height: 46px;
     &.btn-next {
-      color: $body-bg;
-      background-color: $pink;
+      color: var(--body-bg);
+      background-color: var(--pink);
       > img {
         width: 20px;
-        color: $body-bg;
+        color: var(--body-bg);
+        filter: var(--img-color);
         margin: auto 0 auto 14px;
       }
       &[disabled] {
@@ -593,12 +631,13 @@ form {
       }
     }
     &.btn-previous {
-      color: $black;
-      background-color: $body-bg;
+      color: var(--btn-font-color);
+      background-color: var(--body-bg);
       justify-content: start;
       > img {
         width: 20px;
-        color: $black;
+        color: var(--btn-font-color);
+        filter: var(--img-color);
         margin: auto 14px auto 0;
       }
       &[disabled] {
@@ -609,8 +648,8 @@ form {
       }
     }
     &.btn-finish {
-      color: $body-bg;
-      background-color: $pink;
+      color: var(--body-bg);
+      background-color: var(--pink);
       &[disabled] {
         display: none;
       }
@@ -661,12 +700,10 @@ form {
           height: 100%;
           width: 15%;
           justify-content: space-around;
-          .icon {
-            img {
-              height: 20px;
-              width: 20px;
-              margin: 20px 0;
-            }
+          img {
+            height: 20px;
+            width: 20px;
+            margin: 20px 0;
           }
         }
       }
@@ -803,7 +840,7 @@ form {
   .footer {
     width: 100%;
     height: 284px;
-    background: $footer-bg;
+    background: var(--footer-bg);
     margin-top: 3rem;
     padding: 64px 80px;
     display: grid;
@@ -815,7 +852,7 @@ form {
       margin-bottom: 1.5rem;
     }
     .footer__item {
-      color: $font-color;
+      color: var(--font-color);
       font-size: 0.9rem;
       font-weight: 400;
     }
@@ -827,26 +864,26 @@ form {
         height: 30px;
       }
       .brand__name {
-        color: $body-color;
+        color: var(--body-color);
         font-family: "Secular One";
         font-size: 1.1rem;
-        font-weight: 700;    
+        font-weight: 700;
         margin-left: 10px;
       }
     }
     .footer-content-service {
-      grid-column: 2 / 3; 
+      grid-column: 2 / 3;
     }
     .footer-content-about {
-      grid-column: 3 / 4; 
+      grid-column: 3 / 4;
     }
     .footer-content-info {
-      grid-column: 4 / 5; 
+      grid-column: 4 / 5;
     }
     .footer-content-follow {
       grid-column: 5 / 6;
       .footer-icon-wrapper {
-        margin-top: 0.5rem;;
+        margin-top: 0.5rem;
         .footer-icon {
           width: 1.5rem;
           height: 1.5rem;
