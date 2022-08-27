@@ -23,14 +23,14 @@ let cartItems = [
   {
     id: 0,
     name: "破壞補丁修身牛仔褲",
-    image: "/src/image/cart-item-1.png",
+    image: "src/image/cart-item-1.png",
     quantity: 1,
     price: 3999,
   },
   {
     id: 1,
     name: "刷色直筒牛仔褲",
-    image: "/src/image/cart-item-2.png",
+    image: "src/image/cart-item-2.png",
     quantity: 1,
     price: 1299,
   },
@@ -151,10 +151,10 @@ function darkModeToggleHandler(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
     darkModeLabel.innerHTML = `
-      <img src="/src/image/light-mode-icon.png" alt="light-mode"/>`;     
+      <img src="src/image/light-mode-icon.png" alt="light-mode"/>`;     
   } else {
     document.documentElement.setAttribute("data-theme", "light");
-    darkModeLabel.innerHTML = `<img src="/src/image/dark-mode-icon.png" alt="dark-mode" />`;
+    darkModeLabel.innerHTML = `<img src="src/image/dark-mode-icon.png" alt="dark-mode" />`;
   }
 }
 
