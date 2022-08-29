@@ -148,14 +148,9 @@ function setBtnDisabled() {
 }
 
 function darkModeToggleHandler(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    darkModeLabel.innerHTML = `
-      <img src="src/image/light-mode-icon.png" alt="light-mode"/>`;     
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    darkModeLabel.innerHTML = `<img src="src/image/dark-mode-icon.png" alt="dark-mode" />`;
-  }
+  document.documentElement.setAttribute("data-theme", e.target.checked ? "dark" : "light");
+  darkModeLabel.innerHTML = `
+    <img src="src/image/${e.target.checked ? "light-mode-icon.png" : "dark-mode-icon.png"}" alt="${e.target.checked ? "light-mode" : "dark-mode"}"/>`;
 }
 
 renderCartItems();
